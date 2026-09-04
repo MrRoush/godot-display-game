@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_0os3q"]
+[ext_resource type="Script" path="res://scripts/grid_overlay.gd" id="2_l6th2"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0os3q")
+
+[node name="InstructionLabel" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 920.0
+offset_bottom = 45.0
+text = "Drag the orange square to the requested grid coordinate."
+
+[node name="TargetLabel" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 48.0
+offset_right = 920.0
+offset_bottom = 76.0
+text = "Target:"
+
+[node name="Playfield" type="Control" parent="."]
+offset_left = 24.0
+offset_top = 88.0
+offset_right = 536.0
+offset_bottom = 472.0
+
+[node name="GridOverlay" type="Control" parent="Playfield"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_l6th2")
+
+[node name="Ghost" type="ColorRect" parent="Playfield"]
+offset_right = 64.0
+offset_bottom = 64.0
+color = Color(0.6, 0.6, 1, 0.35)
+mouse_filter = 2
+
+[node name="Draggable" type="ColorRect" parent="Playfield"]
+offset_right = 64.0
+offset_bottom = 64.0
+color = Color(1, 0.52, 0.2, 1)
+
+[node name="CheckButton" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 112.0
+offset_right = 768.0
+offset_bottom = 152.0
+text = "Check Position"
+
+[node name="NewTargetButton" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 164.0
+offset_right = 768.0
+offset_bottom = 204.0
+text = "New Target"
+
+[node name="ResultLabel" type="Label" parent="."]
+offset_left = 576.0
+offset_top = 220.0
+offset_right = 920.0
+offset_bottom = 316.0
+autowrap_mode = 2
+text = ""
+
+[node name="HintLabel" type="Label" parent="."]
+offset_left = 24.0
+offset_top = 496.0
+offset_right = 920.0
+offset_bottom = 616.0
+autowrap_mode = 2
+text = "Hint: In screen coordinates, (0, 0) is the top-left corner. As you move down the screen, y gets larger."
