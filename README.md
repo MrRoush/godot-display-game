@@ -6,7 +6,7 @@ A simple Godot 4.7.2 educational mini-game for learning screen coordinates.
 
 - Shows an 8x6 grid.
 - Prompts the player to move an orange square to a coordinate `(x, y)`.
-- Displays a ghost square where the correct position is.
+- Reveals a ghost square for coordinate checking when **Check Position** is pressed.
 - Lets the player press **Check Position** for correctness feedback.
 - Reinforces that screen-space `y` increases downward.
 
